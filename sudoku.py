@@ -5,6 +5,16 @@ def comprobar_cuadrado(sudoku):
             return False
     return True   
 
+def comprobar_enteros(sudoku):
+
+    for fila in sudoku:
+        for col in fila:
+            if type(col) == str:
+                return False
+            elif not col % 1 == 0:
+                return False
+
+    return True
 
 
 if __name__ == "__main__":
@@ -46,3 +56,11 @@ if __name__ == "__main__":
     print(comprobar_cuadrado(incorrecto3))
     print(comprobar_cuadrado(incorrecto5))
     print(comprobar_cuadrado(incorrecto6))
+    print("-----ENTEROS---------")
+    #---------------------------------------------
+    print(comprobar_enteros(correcto))
+    print(comprobar_enteros(incorrecto1))
+    print(comprobar_enteros(incorrecto2))
+    print(comprobar_enteros(incorrecto4))
+    print(comprobar_enteros(incorrecto5))
+    print(comprobar_enteros(incorrecto6))
