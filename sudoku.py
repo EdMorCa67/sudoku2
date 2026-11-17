@@ -109,3 +109,10 @@ if __name__ == "__main__":
     assert comprobar_rango(incorrecto4)is False
     assert comprobar_rango(incorrecto5) is False
     assert comprobar_rango(incorrecto6) is False
+    #--------------------check_num----------------
+    assert comprobar_numero(correcto) is True
+    assert comprobar_numero(incorrecto1) is False
+    assert comprobar_numero(incorrecto2)is False
+    assert comprobar_numero(incorrecto4)is False
+    assert comprobar_numero(incorrecto5) is False
+    assert comprobar_numero(incorrecto6) is False
