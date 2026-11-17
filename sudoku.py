@@ -81,4 +81,11 @@ if __name__ == "__main__":
     assert comprobar_filas(incorrecto3) is True
     assert comprobar_filas(incorrecto5) is True
     assert comprobar_filas(incorrecto6) is False
+    #-----------------columnas-----------------
+    assert comprobar_enteros(correcto) is True
+    assert comprobar_enteros(incorrecto1) is False
+    assert comprobar_enteros(incorrecto2)is True
+    assert comprobar_enteros(incorrecto4)is False
+    assert comprobar_enteros(incorrecto5) is False
+    assert comprobar_enteros(incorrecto6) is False
     
