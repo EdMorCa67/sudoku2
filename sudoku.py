@@ -24,8 +24,22 @@ def comprobar_filas(sudoku):
         if len(set(fila_sin_ceros)) < len(fila_sin_ceros):
             return False
     return True 
-        
 
+def comprobar_columna(sudoku):
+    for columna in zip(*sudoku):
+        columna_sin_ceros = [num for num in columna ]
+        if len(set(columna_sin_ceros)) < len(columna_sin_ceros):
+            return False
+    return True        
+
+
+def comprobar_rango(sudoku):
+    numeros_validos = range(1 , len(sudoku) +1 )
+    for fila in sudoku:
+        for numero in fila:
+            if numero not in numeros_validos:
+                return False
+    return True
 
 if __name__ == "__main__":
 
