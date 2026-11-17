@@ -102,3 +102,10 @@ if __name__ == "__main__":
     assert comprobar_columna(incorrecto4)is True
     assert comprobar_columna(incorrecto5) is True
     assert comprobar_columna(incorrecto6) is False
+    #---------------------rango-------------------
+    assert comprobar_rango(correcto) is True
+    assert comprobar_rango(incorrecto1) is True
+    assert comprobar_rango(incorrecto2)is True
+    assert comprobar_rango(incorrecto4)is False
+    assert comprobar_rango(incorrecto5) is False
+    assert comprobar_rango(incorrecto6) is False
