@@ -17,6 +17,16 @@ def comprobar_enteros(sudoku):
     return True
 
 
+def comprobar_filas(sudoku):
+    for fila in sudoku:
+        
+        fila_sin_ceros = [num for num in fila ]
+        if len(set(fila_sin_ceros)) < len(fila_sin_ceros):
+            return False
+    return True 
+        
+
+
 if __name__ == "__main__":
 
     correcto = [[1, 2, 3],
@@ -49,18 +59,26 @@ if __name__ == "__main__":
     incorrecto6 = [[1, 0, 0, 0],
                [0, 1, 0],
                [0, 0, 0, 1]]
-    print("----------CUADRADOS------------")
-    print(comprobar_cuadrado(correcto))
-    print(comprobar_cuadrado(incorrecto1))
-    print(comprobar_cuadrado(incorrecto2))
-    print(comprobar_cuadrado(incorrecto3))
-    print(comprobar_cuadrado(incorrecto5))
-    print(comprobar_cuadrado(incorrecto6))
-    print("-----ENTEROS---------")
+    # "----------CUADRADOS------------")
+    assert comprobar_cuadrado(correcto)is True
+    assert comprobar_cuadrado(correcto) is True
+    assert comprobar_cuadrado(incorrecto1) is True
+    assert comprobar_cuadrado(incorrecto2)is True
+    assert comprobar_cuadrado(incorrecto3)is True
+    assert comprobar_cuadrado(incorrecto5)is True
+    assert comprobar_cuadrado(incorrecto6)is False
+    #"-----ENTEROS---------")
     #---------------------------------------------
-    print(comprobar_enteros(correcto))
-    print(comprobar_enteros(incorrecto1))
-    print(comprobar_enteros(incorrecto2))
-    print(comprobar_enteros(incorrecto4))
-    print(comprobar_enteros(incorrecto5))
-    print(comprobar_enteros(incorrecto6))
+    assert comprobar_enteros(correcto) is True
+    assert comprobar_enteros(incorrecto1) is True
+    assert comprobar_enteros(incorrecto2)is True
+    assert comprobar_enteros(incorrecto4)is False
+    assert comprobar_enteros(incorrecto5) is False
+    assert comprobar_enteros(incorrecto6) is True
+    #"---------------Check filas ---------------"
+    assert comprobar_filas(correcto) is True
+    assert comprobar_filas(incorrecto2) is True
+    assert comprobar_filas(incorrecto3) is True
+    assert comprobar_filas(incorrecto5) is True
+    assert comprobar_filas(incorrecto6) is False
+    
