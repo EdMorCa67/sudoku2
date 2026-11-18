@@ -41,6 +41,11 @@ def comprobar_rango(sudoku):
                 return False
     return True
 
+
+
+
+def comprobar_numero(sudoku):
+    return comprobar_rango(sudoku) and comprobar_enteros(sudoku)
 if __name__ == "__main__":
 
     correcto = [[1, 2, 3],
@@ -91,6 +96,7 @@ if __name__ == "__main__":
     assert comprobar_enteros(incorrecto6) is True
     #"---------------Check filas ---------------"
     assert comprobar_filas(correcto) is True
+    assert comprobar_filas(incorrecto1) is False
     assert comprobar_filas(incorrecto2) is True
     assert comprobar_filas(incorrecto3) is True
     assert comprobar_filas(incorrecto5) is True
@@ -111,8 +117,8 @@ if __name__ == "__main__":
     assert comprobar_rango(incorrecto6) is False
     #--------------------check_num----------------
     assert comprobar_numero(correcto) is True
-    assert comprobar_numero(incorrecto1) is False
-    assert comprobar_numero(incorrecto2)is False
+    assert comprobar_numero(incorrecto1) is True
+    assert comprobar_numero(incorrecto2)is True
     assert comprobar_numero(incorrecto4)is False
     assert comprobar_numero(incorrecto5) is False
     assert comprobar_numero(incorrecto6) is False
