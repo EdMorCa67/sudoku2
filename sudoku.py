@@ -46,6 +46,13 @@ def comprobar_rango(sudoku):
 
 def comprobar_numero(sudoku):
     return comprobar_rango(sudoku) and comprobar_enteros(sudoku)
+
+
+
+def sudoku(sudoku):
+    return comprobar_cuadrado and comprobar_numero and comprobar_columna and comprobar_filas
+
+
 if __name__ == "__main__":
 
     correcto = [[1, 2, 3],
