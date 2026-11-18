@@ -129,3 +129,10 @@ if __name__ == "__main__":
     assert comprobar_numero(incorrecto4)is False
     assert comprobar_numero(incorrecto5) is False
     assert comprobar_numero(incorrecto6) is False
+
+    assert sudoku(correcto) is True
+    assert sudoku(incorrecto1) is False
+    assert sudoku(incorrecto2)is False
+    assert sudoku(incorrecto4)is False
+    assert sudoku(incorrecto5) is False
+    assert sudoku(incorrecto6) is False
