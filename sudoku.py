@@ -9,9 +9,9 @@ def comprobar_enteros(sudoku):
 
     for fila in sudoku:
         for col in fila:
-            if type(col) == str:
+            if type(col) != int:
                 return False
-            elif not col % 1 == 0:
+            elif col % 1 != 0:
                 return False
 
     return True
@@ -47,10 +47,10 @@ def comprobar_rango(sudoku):
 def comprobar_numero(sudoku):
     return comprobar_rango(sudoku) and comprobar_enteros(sudoku)
 
-
-
 def sudoku(sudoku):
-    return comprobar_cuadrado and comprobar_numero and comprobar_columna and comprobar_filas
+    return comprobar_cuadrado(sudoku) and comprobar_numero(sudoku) and comprobar_columna(sudoku) and comprobar_filas(sudoku)
+
+
 
 
 if __name__ == "__main__":
