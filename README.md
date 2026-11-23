@@ -8,15 +8,15 @@ Para realizar esto se formaron funciones separadas que luego serán procesadas e
 abarcando un aspecto a definir del sudoku tales como comprobar las columnas, las filas, el rango o
 si los números que componen el sudoku se tratan de ser enteros o no.
 
-## FUNCIÓN COMPROBAR_CUADRADO 🥵🥵🥵
+## FUNCIÓN COMPROBAR_CUADRADO 
 La función comprueba si el sudoku cuenta con el mismo número de filas y columnas
 
-## FUNCIÓN COMPROBAR_FILA 🍆💦💦
+## FUNCIÓN COMPROBAR_FILA 
 comprueba que los números no se repitan (o sea 0) en una fila
 
-## FUNCIÓN COMPROBAR_COLUMNA 👉👌
+## FUNCIÓN COMPROBAR_COLUMNA 
 comprueba que los números no se repitan (o sea 0) en una columna
 
-## FUNCIÓN COMPROBAR_ENTEROS 🇰🇪🇰🇪
+## FUNCIÓN COMPROBAR_ENTEROS 
 Comprueba que los números en los sudokus no sean decimales ni negativos
 
