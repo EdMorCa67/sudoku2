@@ -1,51 +1,9 @@
-def comprobar_cuadrado(sudoku):
-    filas = len(sudoku) 
-    for col in sudoku :
-        if len(col) != filas:
-            return False
-    return True   
 
-def comprobar_enteros(sudoku):
+from src.comprobar_columna import comprobar_columna
+from src.comprobar_cuadrado import comprobar_cuadrado
+from src.comprobar_filas import comprobar_filas
+from src.comprobar_numero import comprobar_numero
 
-    for fila in sudoku:
-        for col in fila:
-            if type(col) != int:
-                return False
-            elif col % 1 != 0:
-                return False
-
-    return True
-
-
-def comprobar_filas(sudoku):
-    for fila in sudoku:
-        
-        fila_sin_ceros = [num for num in fila ]
-        if len(set(fila_sin_ceros)) < len(fila_sin_ceros):
-            return False
-    return True 
-
-def comprobar_columna(sudoku):
-    for columna in zip(*sudoku):
-        columna_sin_ceros = [num for num in columna ]
-        if len(set(columna_sin_ceros)) < len(columna_sin_ceros):
-            return False
-    return True        
-
-
-def comprobar_rango(sudoku):
-    numeros_validos = range(1 , len(sudoku) +1 )
-    for fila in sudoku:
-        for numero in fila:
-            if numero not in numeros_validos:
-                return False
-    return True
-
-
-
-
-def comprobar_numero(sudoku):
-    return comprobar_rango(sudoku) and comprobar_enteros(sudoku)
 
 def sudoku(sudoku):
     return comprobar_cuadrado(sudoku) and comprobar_numero(sudoku) and comprobar_columna(sudoku) and comprobar_filas(sudoku)
@@ -85,50 +43,7 @@ if __name__ == "__main__":
     incorrecto6 = [[1, 0, 0, 0],
                [0, 1, 0],
                [0, 0, 0, 1]]
-    # "----------CUADRADOS------------")
-    assert comprobar_cuadrado(correcto)is True
-    assert comprobar_cuadrado(correcto) is True
-    assert comprobar_cuadrado(incorrecto1) is True
-    assert comprobar_cuadrado(incorrecto2)is True
-    assert comprobar_cuadrado(incorrecto3)is True
-    assert comprobar_cuadrado(incorrecto5)is True
-    assert comprobar_cuadrado(incorrecto6)is False
-    #"-----ENTEROS---------")
-    #---------------------------------------------
-    assert comprobar_enteros(correcto) is True
-    assert comprobar_enteros(incorrecto1) is True
-    assert comprobar_enteros(incorrecto2)is True
-    assert comprobar_enteros(incorrecto4)is False
-    assert comprobar_enteros(incorrecto5) is False
-    assert comprobar_enteros(incorrecto6) is True
-    #"---------------Check filas ---------------"
-    assert comprobar_filas(correcto) is True
-    assert comprobar_filas(incorrecto1) is False
-    assert comprobar_filas(incorrecto2) is True
-    assert comprobar_filas(incorrecto3) is True
-    assert comprobar_filas(incorrecto5) is True
-    assert comprobar_filas(incorrecto6) is False
-    #-----------------columnas-----------------
-    assert comprobar_columna(correcto) is True
-    assert comprobar_columna(incorrecto1) is False
-    assert comprobar_columna(incorrecto2)is False
-    assert comprobar_columna(incorrecto4)is True
-    assert comprobar_columna(incorrecto5) is True
-    assert comprobar_columna(incorrecto6) is False
-    #---------------------rango-------------------
-    assert comprobar_rango(correcto) is True
-    assert comprobar_rango(incorrecto1) is True
-    assert comprobar_rango(incorrecto2)is True
-    assert comprobar_rango(incorrecto4)is False
-    assert comprobar_rango(incorrecto5) is False
-    assert comprobar_rango(incorrecto6) is False
-    #--------------------check_num----------------
-    assert comprobar_numero(correcto) is True
-    assert comprobar_numero(incorrecto1) is True
-    assert comprobar_numero(incorrecto2)is True
-    assert comprobar_numero(incorrecto4)is False
-    assert comprobar_numero(incorrecto5) is False
-    assert comprobar_numero(incorrecto6) is False
+
 
     assert sudoku(correcto) is True
     assert sudoku(incorrecto1) is False

@@ -1,5 +1,5 @@
-from comprobar_rango import comprobar_rango
-from comprobar_enteros import comprobar_enteros
+from .comprobar_rango import comprobar_rango
+from .comprobar_enteros import comprobar_enteros
 
 def comprobar_numero(sudoku):
     return comprobar_rango(sudoku) and comprobar_enteros(sudoku)
